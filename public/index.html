@@ -8,40 +8,59 @@
 
     <link rel="stylesheet" href="/src/styles/global.css">
     <link rel="manifest" href="/manifest.json">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 
 <body>
 
-    <div id="app" class="app-container">
+    <!-- Onboarding Steps -->
+    <section id="step-name" class="onboarding-step active">
+        <h1>Welcome!</h1>
+        <p>Please enter your name:</p>
+        <input type="text" id="user-name-input" placeholder="Your name" />
+        <button id="name-next-btn">Next</button>
+    </section>
+
+    <section id="step-pin" class="onboarding-step">
+        <h1>Create a PIN</h1>
+        <p>Enter a 6-digit PIN:</p>
+        <input type="password" id="user-pin-input" maxlength="6" pattern="\d*" inputmode="numeric"/>
+        <button id="pin-next-btn">Next</button>
+    </section>
+
+    <section id="step-pin-confirm" class="onboarding-step">
+        <h1>Confirm PIN</h1>
+        <p>Re-enter your PIN:</p>
+        <input type="password" id="user-pin-confirm-input" maxlength="6" pattern="\d*" inputmode="numeric"/>
+        <button id="pin-confirm-btn">Confirm</button>
+    </section>
+
+    <!-- Main App -->
+    <div id="app" class="app-container hidden">
 
         <header class="app-header">
             <h1>Moon's Mind App</h1>
         </header>
 
         <section class="weather-bar" id="weather-bar">
-
             <div id="weather-location">--</div>
-
             <div class="weather-item">
                 <span class="icon" id="weather-icon">☁️</span>
                 <span class="value" id="weather-desc">--</span>
             </div>
-
             <div class="weather-item">
                 <span class="icon">🌡️</span>
                 <span class="value" id="weather-temp">--°C</span>
             </div>
-
             <div class="weather-item">
                 <span class="icon">💧</span>
                 <span class="value" id="weather-humidity">--%</span>
             </div>
-
             <div class="weather-item">
                 <span class="icon">🌬️</span>
                 <span class="value" id="weather-wind">-- m/s</span>
             </div>
-
         </section>
 
         <div class="add-entry-box">
@@ -68,14 +87,11 @@
             </div>
         </div>
 
-        <div id="entries-list">
-
-        </div>
+        <div id="entries-list"></div>
 
     </div>
 
     <script type="module" src="/src/main.js"></script>
 
 </body>
-
 </html>
