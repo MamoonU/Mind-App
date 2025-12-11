@@ -64,7 +64,6 @@ body {
     opacity: 0.9;
 }
 
-/* ===== Modal Backdrop ===== */
 .modal {
     position: fixed;
     top: 0; left: 0;
@@ -78,12 +77,10 @@ body {
     z-index: 50;
 }
 
-/* Hidden State */
 .hidden {
     display: none;
 }
 
-/* ===== Modal Content Card ===== */
 .modal-content {
     background: white;
     padding: 1.5rem;
@@ -101,7 +98,6 @@ body {
     text-align: center;
 }
 
-/* ===== Mood Selector ===== */
 .mood-selector {
     display: flex;
     justify-content: space-between;
@@ -128,7 +124,6 @@ body {
     background: #ece8ff;
 }
 
-/* ===== Notes Box ===== */
 #entry-notes {
     width: 100%;
     padding: 0.8rem;
@@ -138,7 +133,6 @@ body {
     resize: none;
 }
 
-/* ===== Modal Buttons ===== */
 .modal-actions {
     display: flex;
     justify-content: space-between;
@@ -162,5 +156,14 @@ body {
 .save-btn {
     background: #6c5ce7;
     color: white;
+}
+
+.entry-card {
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    font-size: 0.9rem;
 }
 
