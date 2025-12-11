@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moon's Mind App</title>
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="/src/styles/global.css">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+
+    <div id="app" class="app-container">
+
+        <header class="app-header">
+            <h1>Moon's Mind App</h1>
+        </header>
+
+        <section class="weather-bar">
+            <div class="weather-item">
+                <span class="icon">🌡️</span>
+                <span class="value" id="weather-temp">--°C</span>
+            </div>
+            <div class="weather-item">
+                <span class="icon">☁️</span>
+                <span class="value" id="weather-desc">--</span>
+            </div>
+            <div class="weather-item">
+                <span class="icon">💧</span>
+                <span class="value" id="weather-humidity">--%</span>
+            </div>
+        </section>
+
+        <div class="add-entry-box">
+            <button id="add-entry-btn">+ Add Entry</button>
+        </div>
+
+        <!-- Add Entry Modal -->
+        <div id="add-entry-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Add Entry</h2>
+
+                <!-- Mood Selection -->
+                <div class="mood-selector">
+                    <button class="mood-btn" data-mood="happy">😊</button>
+                    <button class="mood-btn" data-mood="neutral">😐</button>
+                    <button class="mood-btn" data-mood="sad">😢</button>
+                    <button class="mood-btn" data-mood="angry">😡</button>
+                </div>
+
+                <!-- Notes -->
+                <textarea id="entry-notes" placeholder="Write your thoughts..." rows="4"></textarea>
+
+                <!-- Buttons -->
+                <div class="modal-actions">
+                    <button id="cancel-entry-btn" class="cancel-btn">Cancel</button>
+                    <button id="save-entry-btn" class="save-btn">Save Entry</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="entries-list">
+            <!-- Entries will appear here -->
+        </div>
+
+    </div>
+
+    <!-- Script loaded at the end of body -->
+    <script type="module" src="/src/main.js"></script>
+
+</body>
+
+</html>
