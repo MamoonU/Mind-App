@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moon's Mind App</title>
+
+    <link rel="stylesheet" href="./global.css">
+    <link rel="manifest" href="./manifest.json">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+<body>
+
+<div id="loading-overlay" class="loading-overlay hidden">
+    <div class="loader"></div>
+    <p>Loading…</p>
+</div>
+
+<section id="step-name" class="onboarding-step active full-screen">
+    <h1>Welcome</h1>
+    <input type="text" id="user-name-input" placeholder="Enter your name" />
+    <button id="name-next-btn">Next</button>
+</section>
+
+<section id="step-pin" class="onboarding-step full-screen">
+    <h1>Create a PIN</h1>
+    <input type="password" id="user-pin-input" maxlength="6" inputmode="numeric" placeholder="6-digit PIN"/>
+    <button id="pin-next-btn">Next</button>
+</section>
+
+<section id="step-pin-confirm" class="onboarding-step full-screen">
+    <h1>Confirm PIN</h1>
+    <input type="password" id="user-pin-confirm-input" maxlength="6" inputmode="numeric" placeholder="Re-enter PIN"/>
+    <button id="pin-confirm-btn">Confirm</button>
+</section>
+
+<div id="app" class="app-container hidden">
+
+    <header class="app-header sticky">
+        Moon's Mind App
+    </header>
+
+    <section class="weather-container">
+        <div class="weather-location" id="weather-location">--</div>
+
+        <div class="weather-row">
+            <div class="weather-box">
+                <span id="weather-icon">☁️</span>
+                <span id="weather-desc">--</span>
+            </div>
+            <div class="weather-box">
+                <span>🌡️</span>
+                <span id="weather-temp">--°C</span>
+            </div>
+            <div class="weather-box">
+                <span>💧</span>
+                <span id="weather-humidity">--%</span>
+            </div>
+            <div class="weather-box">
+                <span>🌬️</span>
+                <span id="weather-wind">-- m/s</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="add-entry-box">
+        <button id="add-entry-btn">+ Add Entry</button>
+        <button id="share-data-btn">🔒 Share Encrypted Data</button>
+    </div>
+
+    <div id="add-entry-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>How are you feeling?</h2>
+
+            <div class="mood-selector">
+                <button class="mood-btn" data-mood="ecstatic">🤣</button>
+                <button class="mood-btn" data-mood="happy">😊</button>
+                <button class="mood-btn" data-mood="neutral">😐</button>
+                <button class="mood-btn" data-mood="sad">☹️</button>
+                <button class="mood-btn" data-mood="depressed">😭</button>
+            </div>
+
+            <textarea id="entry-notes" rows="4" placeholder="Write your thoughts..."></textarea>
+
+            <div class="modal-actions">
+                <button id="cancel-entry-btn" class="cancel-btn">Cancel</button>
+                <button id="save-entry-btn" class="save-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="entries-list"></div>
+</div>
+
+<script type="module" src="./main.js"></script>
+</body>
+</html>
